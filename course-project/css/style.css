@@ -1,0 +1,377 @@
+@font-face {
+    font-family: 'LC Chalk';
+    src: url('3892.ttf') format('truetype'),
+         url('3892.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-size: 14px;
+    font-family: 'LC Chalk';
+    background-image: url(../img/222945d61a52481ba94f3deda6e86981.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.container {
+    padding: 20px 30px 5px 30px;
+}
+
+
+/* ===== ШАПКА ===== */
+.header {
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.login {
+    padding: 6px;
+    border-radius: 45%;
+    border: 1px solid white;
+    color: white;
+    font-size: 3.7rem;
+    cursor: default;
+}
+
+/* ===== ДОСКИ ===== */
+
+.boards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.board {
+    border-radius: 10px;
+    margin-top: 20px;   
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid white;
+}
+
+.board-head, .board-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h2 {
+    color: white;
+    font-size: 2rem;
+    font-family: 'LC Chalk';
+}
+
+.number-of-cards {
+    margin-left: 20px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    box-shadow: none;
+}
+
+.delete-all-cards {
+    color: white;
+    font-size: 1.2rem;
+    justify-self: end;
+}
+
+
+/* ===== КАРТОЧКИ ===== */
+.card, .add-card-block {
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 10px; 
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+.card-title {
+    margin-top: 10px;
+}
+
+.card-body {
+    margin-top: 10px;
+}
+
+.card-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.card-create-info {
+    display: flex;
+    align-items: center;
+}
+
+.card-image-user {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+.add-cards-button {
+    color: white;
+    display: block;
+    margin: 20px auto;
+    border: none;
+    background: none;
+}
+
+/* ===== ВСЕ hover И focus ===== */
+
+.login:hover, 
+.delete-all-cards:hover, 
+.delete-card:hover, 
+.move-card:hover, 
+.add-cards-button:hover, 
+.save-card-button:hover, 
+.add-comments-button:hover,
+.comment-form-button:hover {
+    color: grey;
+}
+.add-comments-button:focus,
+.add-cards-button:focus,
+.number-of-cards:focus {
+    outline: none;
+}
+
+/* ===== ЗАТЕМНЕНИЕ ФОНА ===== */
+
+.darkening-background {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+/* ==== ФОРМА ДОБАВЛЕНИЯ КАРТОЧКИ ===== */
+
+.form-input-title,
+.form-input-description {
+    display: block;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 10px;
+    resize: none;
+    /* margin: 0 auto   ; */
+}
+
+.form-input-description {
+    width: 90%;
+}
+.form-input-title {
+    width: 80%;
+}
+
+.add-card-form-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-choice-user {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px dashed black;
+    background-color: white;
+    margin-right: 15px;
+    font-size: 0.5rem;
+}
+
+.save-card-button {
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+    border: none;
+    padding: 10px;
+}
+
+.add-card-block {
+    display: none;
+    padding: 10px;
+}
+
+/* ===== ОКНО РЕДАКТИРОВАНИЯ КАРТОЧКИ ===== */
+
+.card-edit-window {
+    font-family: 'Balsamiq Sans', cursive;
+    max-width: 600px;
+    min-width: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 40px;    
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+.edit-card-title {
+    font-size: 2.3rem;
+    margin-top: 15px;
+    position: relative;
+}
+
+.edit-card-body {
+    margin: 30px 0px;
+    position: relative;
+}
+/* .edit-card-title::after, .edit-card-body::after { ????????
+    content: #f304;
+    font-family: FontAwesome;
+    font-size: 0.7rem;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+} */
+
+.add-comments-button {
+    display: block;
+    margin: 20px auto;
+    border: none;
+    background: #F5F5F5;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.comments-block {
+    background-color: #F5F5F5;
+    margin-top: 30px;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.comment {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    margin: 15px 0px;
+}
+
+.comment-image {
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+}
+
+.add-comment-form{
+    background-color: #F5F5F5;
+    padding: 20px 10px;
+    border-radius: 10px;
+    display: none;
+    margin-top: 20px;
+}
+
+.comment-form-input{
+    display: block;
+    border: none;
+    border-bottom: 1px solid #000;
+    width: 90%;
+    padding: 10px;
+    resize: none;
+    margin: 0 auto;
+    background-color: #F5F5F5;
+}
+
+.comment-form-button {
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    background-color: white;
+}
+
+.modal-window {
+  display:none;
+  text-align: center;
+  flex-direction: column;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border: 2px solid black;
+  font-weight: 900;
+  font-size: 2rem;
+  font-family: 'Potta One', cursive;
+  top: 50%;
+  left: 30%;
+  margin-top: -100px; 
+  margin-left: -250px; 
+  position:fixed;
+  background-color: #fff;
+  z-index: 99;
+}
+
+.button-modal {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 50px;
+}
+.buttonStyle{
+  width: 100px;
+  
+}
+.buttonStyle:hover{
+  background-color: greenyellow;
+}
+
+.modal-text {
+  padding: 15px;
+}
+.modalWindow-delete{
+    display:none;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border: 2px solid black;
+    font-weight: 900;
+    font-size: 2rem;
+    font-family: 'Potta One', cursive;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px; 
+    margin-left: -250px; 
+    position:fixed;
+    background-color: #fff;
+}
+.modalWindow-delete_all{
+    display:none;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border: 2px solid black;
+    font-weight: 900;
+    font-size: 2rem;
+    font-family: 'Potta One', cursive;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px; 
+    margin-left: -250px; 
+    position:fixed;
+    background-color: #fff;
+}

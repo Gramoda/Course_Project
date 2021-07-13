@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our course project</title>
+    <script defer src="./js/script.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!--    модалки для удаления         -->
+        <div class="modalWindow-delete">
+            Вы уверенны что хотите удалить данное задание?
+            <div class="buttonModalWindow">
+                <button class="confirm-buttonn buttonStyle">Да</button>
+                <button class="cansel-buttonn buttonStyle">нет</button>
+        </div>
+        </div>
+        <div class="modalWindow-delete_all" >
+            Вы уверенны что хотите удалить все задания?
+        <div class="buttonModalWindowAll">
+            <button class="confirm-buttonn_all buttonStyle">Да</button>
+            <button class="cansel-buttonn_all buttonStyle">Нет</button>
+        </div>
+        </div>
+
+        <!-- ШАПКА -->
+       <div class="header">
+            <h1>Our course project</h1>
+            <div class="login">Log In</div> 
+       </div>
+
+       <!-- ДОСКИ -->
+       <div class="boards">
+            <div class="board">
+                <div class="board-head">
+                    <div class="board-name">
+                        <h2>To Do</h2>
+                        <input value="0" id="toDo-number" class="number-of-cards" type="button">
+                    </div>
+                    <div class="delete-all-cards" id="delete-all-cards_toDo"><i class="far fa-trash-alt"></i></div>
+                </div>
+                <div class="cards" id="toDoCards">
+
+                </div>
+
+                <!-- КНОПКА ДОБАВЛЕНИЯ КАРТОЧКИ -->
+                <div class="add-cards-block">
+                    <input value="+ add card" class="add-cards-button" type="button">
+                </div>
+
+
+                <!-- ОКНО ДОБАВЛЕНИЕ КАРТОЧКИ -->
+                <div class="add-card-block">
+                    <form id="add-card-form">
+                        <div class="add-card-form-head">
+                            <input id="card-title" class="form-input-title" type="text" placeholder="card title" required >
+                            <input id="choice-user" type="button" class="form-choice-user" value="user">   
+                        </div>
+                        <textarea id="card-description" class="form-input-description" rows="3" placeholder="card description"></textarea>
+                        <input type="submit" value="save" class="save-card-button">
+                    </form>
+                </div>
+
+            </div>
+
+
+            <!-- ДОСКА In Progress -->
+            <div class="board">
+                <div class="board-head">
+                    <div class="board-name">
+                        <h2>In Progress</h2>
+                        <input value="0" id="inProgress-number" class="number-of-cards" type="button">
+                    </div>
+                    <div class="delete-all-cards" id="delete-all-cards_InProg"><i class="far fa-trash-alt"></i></div>
+                </div>
+                <div class="cards"  id="inProgressCards">
+                   
+                </div>
+            </div>
+
+            <!-- ДОСКА Done -->
+            <div class="board">
+                <div class="board-head">
+                    <div class="board-name">
+                        <h2>Done</h2>
+                        <input value="0" id="done-number" class="number-of-cards" type="button">
+                    </div>
+                    <div class="delete-all-cards" id="delete-all-cards_done"><i class="far fa-trash-alt"></i></div>
+                </div>
+                <div class="cards" id="doneCards">
+                                      
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="modal-window">
+          <p class="modal-text">Слишком много заданий в 'in progress', переместите или удалите задание</p>
+          <button class="confirm-button buttonStyle">Ok</button>
+        </div>
+       
+    </div>
+
+    <!-- ЗАТЕМНЕНЕИЕ ФОНА -->
+    <div class="darkening-background"></div>
+
+    
+
+    <!-- ОКНО РЕДАКТИРОВАНИЯ КАРТОЧКИ -->
+    <div class="card-edit-window">
+        <h3 class="edit-card-title"></i>надо сделать сайт</h3>
+        <p class="edit-card-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam corporis ipsa impedit. Dicta voluptas rem libero veniam, necessitatibus nisi, aliquid perspiciatis doloremque odit modi tenetur, voluptatem ullam ducimus quasi sed? много текста о том какой замечательный будет сайт</p>
+                
+        <div class="comments-block">
+            <div class="comment">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, alias.</p>
+                <img  class="card-image-user comment-image" src="./img/background.jpg" alt="">
+            </div>
+            <div class="comment">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem ipsum doloribus delectus autem, nemo illum reprehenderit cum incidunt alias magnam. Molestias natus hic repudiandae deserunt, soluta nisi explicabo aspernatur vero reiciendis numquam accusamus dignissimos ipsa magnam doloremque! Quaerat, exercitationem perspiciatis odio molestiae sed labore ea non, eligendi aperiam est dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, alias.</p>
+                <img  class="card-image-user comment-image" src="./img/background.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="add-comments-block">
+            <input value="+ add comments" class="add-comments-button" type="button">
+        </div>
+        
+        <form name="add-comment-form" class="add-comment-form">
+            <textarea name="comment-form-input" class="comment-form-input"  rows="3" placeholder="enter your comment" required></textarea>
+            <input type="submit" value="add" name="comment-form-button" class="comment-form-button">
+        </form>
+        
+        <div class="card-button">
+            <div class="card-create-info">
+                <img  class="card-image-user" src="./img/background.jpg" alt="">
+                <div class="card-date">
+                    15.01.2021
+                </div>
+            </div>                            
+            <div class="delete-card">
+                <i class="fas fa-sign-out-alt"></i>
+            </div>
+            <div class="move-card">
+                <i class="far fa-trash-alt"></i>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
